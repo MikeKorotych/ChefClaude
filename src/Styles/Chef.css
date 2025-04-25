@@ -77,8 +77,46 @@ header h1 {
    cursor: pointer;
 }
 
+@media (max-width: 768px) {
+   .add-inredient-form > button {
+      padding: 9px 25px;
+   }
+
+   .get-recipe-container > #get-recipe-btn {
+      padding: 9px 14px;
+   }
+}
+
+@media (max-width: 540px) {
+   .add-inredient-form > button {
+      padding: 9px 15px;
+   }
+
+   .get-recipe-container {
+      padding: 28px !important;
+   }
+}
+
+@media (max-width: 570px) {
+   .get-recipe-container > #get-recipe-btn {
+      padding: 9px 10px;
+   }
+}
+
+@media (max-width: 630px) {
+   .get-recipe-container p {
+      display: none;
+   }
+   .get-recipe-container h3 {
+      padding-bottom: 6px !important;
+   }
+   .get-recipe-container #get-recipe-btn {
+      padding: 9px 25px;
+   }
+}
+
 main {
-   padding: 70px 30px;
+   padding: 70px 60px;
    max-width: 800px;
    margin: 0 auto;
 }

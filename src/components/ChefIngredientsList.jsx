@@ -27,7 +27,9 @@ const ChefIngredientsList = ({ ingredients, getRecipeHandler }) => {
                   <h3>Ready for a recipe?</h3>
                   <p>Generate a recipe from your list of ingredients.</p>
                </div>
-               <button onClick={getRecipeHandler}>Get a recipe</button>
+               <button id="get-recipe-btn" onClick={getRecipeHandler}>
+                  Get a recipe
+               </button>
             </div>
          )}
       </section>
