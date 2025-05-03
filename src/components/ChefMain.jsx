@@ -8,65 +8,65 @@ import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
 const ChefMain = () => {
-   const [ingredients, setIngredients] = useState([]);
-   const [recipe, setRecipe] = useState('');
-   const [isLoading, setIsLoading] = useState(false); // Добавлено состояние для спиннера
+  const [ingredients, setIngredients] = useState([]);
+  const [recipe, setRecipe] = useState('');
+  const [isLoading, setIsLoading] = useState(false); // Добавлено состояние для спиннера
 
-   // Get recipe button
-   const getRecipeHandler = async () => {
-      setIsLoading(true); // Показать спиннер
-      try {
-         const recipeMarkdown = await getRecipeFromChefClaude(ingredients);
-         console.log(recipeMarkdown);
+  // Get recipe button
+  const getRecipeHandler = async () => {
+    setIsLoading(true); // Показать спиннер
+    try {
+      const recipeMarkdown = await getRecipeFromChefClaude(ingredients);
+      console.log(recipeMarkdown);
 
-         setRecipe(recipeMarkdown);
-      } catch (error) {
-         console.error('Error getting recipe:', error.message);
-      } finally {
-         setIsLoading(false); // Скрыть спиннер
-      }
-   };
+      setRecipe(recipeMarkdown);
+    } catch (error) {
+      console.error('Error getting recipe:', error.message);
+    } finally {
+      setIsLoading(false); // Скрыть спиннер
+    }
+  };
 
-   // Add ingredient
-   const submitHandler = (formData) => {
-      const newIngredient = formData.get('ingredient');
+  // Add ingredient
+  const submitHandler = (formData) => {
+    const newIngredient = formData.get('ingredient');
 
-      if (newIngredient.length > 0) {
-         setIngredients((ingredients) => [...ingredients, newIngredient]);
-      } else {
-         alert("Igredient can't be an empty string");
-      }
-   };
+    if (newIngredient.length > 0) {
+      setIngredients((ingredients) => [...ingredients, newIngredient]);
+    } else {
+      alert("Igredient can't be an empty string");
+    }
+  };
 
-   return (
-      <main>
-         <form className="add-inredient-form" action={submitHandler}>
-            <input
-               type="text"
-               placeholder="e.g. oregano"
-               aria-label="Add ingredient"
-               name="ingredient"
-            />
-            <button>+ Add ingredient</button>
-         </form>
+  return (
+    <main>
+      <form className="add-inredient-form" action={submitHandler}>
+        <input
+          type="text"
+          placeholder="e.g. oregano"
+          aria-label="Add ingredient"
+          name="ingredient"
+        />
+        <button>+ Add ingredient</button>
+      </form>
 
-         <ChefIngredientsList
-            ingredients={ingredients}
-            getRecipeHandler={getRecipeHandler}
-         />
-         {isLoading && !recipe && (
-            <>
-               <div className="spinner-container">
-                  <img src={Spinner} alt="Loading..." />
-               </div>
-               <div className="skeleton-wrapper">
-                  <Skeleton count={7} />
-               </div>
-            </>
-         )}
-         {recipe && <ChefRecipe recipe={recipe} />}
-      </main>
-   );
+      <ChefIngredientsList
+        ingredients={ingredients}
+        getRecipeHandler={getRecipeHandler}
+      />
+      {isLoading && !recipe && (
+        <>
+          <div className="spinner-container">
+            <img src={Spinner} alt="Loading..." />
+          </div>
+          <div className="skeleton-wrapper">
+            <Skeleton count={6} />
+          </div>
+        </>
+      )}
+      {recipe && <ChefRecipe recipe={recipe} />}
+    </main>
+  );
 };
 
 export default ChefMain;
