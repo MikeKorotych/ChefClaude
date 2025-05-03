@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import Spinner from '../assets/loading-spin.svg';
 import { getDrinkToDish } from '../ai';
 import Markdown from 'react-markdown';
@@ -8,6 +8,7 @@ const Sommelier = () => {
   const [dish, setDish] = useState('');
   const [answer, setAnswer] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const inputRef = useRef(null);
 
   const submitHandler = async (event) => {
     event.preventDefault();
@@ -16,6 +17,7 @@ const Sommelier = () => {
     const dishName = formData.get('dishInput');
 
     if (dishName.length > 0) {
+      if (inputRef.current) inputRef.current.value = '';
       setDish(dishName);
       await getDrinkHandler(dishName);
     } else {
@@ -27,7 +29,7 @@ const Sommelier = () => {
     setAnswer('');
 
     try {
-      console.log('Fetching data...');
+      setIsLoading(true);
       const drinkMarkdown = await getDrinkToDish(dishName);
       setAnswer(drinkMarkdown);
     } catch (error) {
@@ -41,7 +43,12 @@ const Sommelier = () => {
     <main>
       <h2>Here you can ask what kind of drink goes best with your dish.</h2>
       <form onSubmit={submitHandler}>
-        <input type="text" name="dishInput" placeholder="e.g. pasta" />
+        <input
+          type="text"
+          name="dishInput"
+          placeholder="e.g. pasta"
+          ref={inputRef}
+        />
         <button>Ask</button>
       </form>
       {isLoading && (
