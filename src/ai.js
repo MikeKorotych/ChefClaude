@@ -9,7 +9,9 @@ const SYSTEM_PROMPT_FOR_SOMMELIER = `
 You are a helper that gets the name of a dish that the user has, and suggests a drink (or several drink options) that would go well with that dish. If you don't know the name of the dish, you can guess what it is and suggest a drink to go with it. Format your answer in markdown format to make it easier to display on a web page`;
 
 const anthropic = new Anthropic({
-  apiKey: API_KEY,
+  // apiKey: API_KEY,
+  apiKey:
+    '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',
   dangerouslyAllowBrowser: true,
 });
 
