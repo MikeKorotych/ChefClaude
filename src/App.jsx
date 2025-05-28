@@ -12,7 +12,6 @@ const App = () => {
     <Routes>
       <Route path="/" element={<ChefHeader />}>
         <Route index element={<Navigate to="/chef-claude" replace />} />
-
         <Route path="chef-claude" element={<ChefMain />} />
         <Route path="menu-planner" element={<MenuPlanner />} />
         <Route path="sommelier" element={<Sommelier />} />
