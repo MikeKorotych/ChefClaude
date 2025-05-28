@@ -40,6 +40,7 @@ const ChefMain = () => {
 
   return (
     <main>
+      <h2>Here you can create a meal from your products:</h2>
       <form className="add-inredient-form" action={submitHandler}>
         <input
           type="text"

@@ -61,6 +61,37 @@
   background-color: #2d2d2b;
 }
 
+li,
+.title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.title {
+  /* text-align: center; */
+  margin: 2rem 0;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  flex-direction: column;
+}
+
+.title > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon {
+  font-size: 1.2em;
+  flex-shrink: 0;
+}
+
+.title .icon {
+  font-size: 1.4em;
+  color: var(--primary-color);
+}
+
 @media (max-width: 500px) {
   .menu-planner-form {
     padding: 1.5rem;
@@ -76,16 +107,55 @@ form {
   line-height: 38px;
   font-weight: 600;
   padding-bottom: 24px;
-
-  text-align: center;
 }
 
-/* 
-.menu-planner-form input,
-.menu-planner-form select {
-  text-align: center;
-} */
-/* #sex {
-  background-color: var(--primary-color);
-  color: var(--secondary-color);
-} */
+.text-container {
+  padding-left: 1rem;
+}
+
+/* animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu-planner-h2 {
+  animation: fadeInUp 1s ease-out forwards;
+  opacity: 0;
+}
+
+.menu-planner__list-item1 {
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 0.5s;
+  opacity: 0;
+}
+
+.menu-planner__list-item2 {
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 1s;
+  opacity: 0;
+}
+
+.menu-planner__list-item3 {
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 1.5s;
+  opacity: 0;
+}
+
+.menu-planner-title {
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 2s;
+  opacity: 0;
+}
+
+.menu-planner-form {
+  animation: fadeInUp 1s ease-out forwards;
+  animation-delay: 2.5s;
+  opacity: 0;
+}

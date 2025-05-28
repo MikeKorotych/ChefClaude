@@ -1,5 +1,10 @@
 import React from 'react';
 import '../Styles/MenuPlanner.css';
+import { GiMeat } from 'react-icons/gi';
+import { MdRestaurantMenu } from 'react-icons/md';
+import { CgGym } from 'react-icons/cg';
+import { BsFillPencilFill } from 'react-icons/bs';
+import { FaUserCheck } from 'react-icons/fa';
 
 // форма:
 // Человек или Питомец
@@ -16,19 +21,34 @@ import '../Styles/MenuPlanner.css';
 const MenuPlanner = () => {
   return (
     <main>
-      <h2>Here you can create your meal plan depending on your:</h2>
-      <ul>
-        <li>favorite products 🥩</li>
-        <li>dietary preferences 🍴</li>
-        <li>lifestyle 🏋️‍♀️</li>
-      </ul>
-      <div className="title">
-        📝Fill the form
-        <br />
-        get a personal meal plan
-        <br />
-        only for you🫵
+      <div className="text-container">
+        <h2 className="menu-planner-h2">
+          Here you can create your meal plan depending on:
+        </h2>
+        <ul className="menu-planner__ul">
+          <li className="menu-planner__list-item1">
+            <CgGym className="icon" size={24} /> lifestyle
+          </li>
+          <li className="menu-planner__list-item2">
+            <GiMeat className="icon" size={24} /> favorite products
+          </li>
+          <li className="menu-planner__list-item3">
+            <MdRestaurantMenu className="icon" size={24} /> dietary preferences
+          </li>
+        </ul>
+        <h2 className="menu-planner-title">
+          Fill the form get a personal meal plan only for you:
+        </h2>
       </div>
+      {/* <div className="title menu-planner-title">
+        <div>
+          <BsFillPencilFill className="icon" size={20} /> Fill the form
+        </div>
+        <div>get a personal meal plan</div>
+        <div>
+          <FaUserCheck className="icon" size={24} /> only for you
+        </div>
+      </div> */}
       <form className="menu-planner-form">
         {/* <label>
           Are you a person or a pet?

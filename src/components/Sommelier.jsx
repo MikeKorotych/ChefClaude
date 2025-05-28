@@ -41,7 +41,7 @@ const Sommelier = () => {
 
   return (
     <main>
-      <h2>Here you can ask what kind of drink goes best with your dish.</h2>
+      <h2>Here you can ask what kind of drink goes best with your dish:</h2>
       <form onSubmit={submitHandler}>
         <input
           type="text"

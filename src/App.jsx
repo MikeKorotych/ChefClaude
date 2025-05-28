@@ -7,6 +7,12 @@ import { Navigate, Route, Routes } from 'react-router-dom';
 import MenuPlanner from './components/MenuPlanner';
 import Sommelier from './components/Sommelier';
 
+//! TODO:
+// 1. add fadeUp animations for ChefClaude and AI Sommelier
+// 2. collect data from the form
+// 3. send data throungh API to the server
+// 4. get response from the server and display it
+
 const App = () => {
   return (
     <Routes>
