@@ -3,6 +3,7 @@ import Spinner from '../assets/loading-spin.svg';
 import { getDrinkToDish } from '../ai';
 import Markdown from 'react-markdown';
 import Skeleton from 'react-loading-skeleton';
+import '../Styles/Sommelier.css';
 
 const Sommelier = () => {
   const [dish, setDish] = useState('');
@@ -38,11 +39,12 @@ const Sommelier = () => {
       setIsLoading(false);
     }
   };
-
   return (
     <main>
-      <h2>Here you can ask what kind of drink goes best with your dish:</h2>
-      <form onSubmit={submitHandler}>
+      <h2 className="sommelier-h2">
+        Here you can ask what kind of drink goes best with your dish:
+      </h2>
+      <form className="sommelier-form" onSubmit={submitHandler}>
         <input
           type="text"
           name="dishInput"
@@ -61,7 +63,11 @@ const Sommelier = () => {
           </div>
         </>
       )}
-      {answer && <Markdown>{answer}</Markdown>}
+      {answer && (
+        <div className="markdown-content">
+          <Markdown>{answer}</Markdown>
+        </div>
+      )}
     </main>
   );
 };

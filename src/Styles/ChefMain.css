@@ -1,0 +1,141 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chef-main-h2 {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.add-ingredient-form {
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding-bottom: 48px;
+}
+
+.add-ingredient-form input {
+  border-radius: 6px;
+  padding: 9px 13px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+  flex-grow: 1;
+  min-width: 150px;
+  max-width: 610px;
+  background-color: var(--secondary-color);
+}
+
+.add-ingredient-form button {
+  font-family: 'Inter', sans-serif;
+  border-radius: 6px;
+  padding: 9px 35.5px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.add-ingredient-form button:hover {
+  background-color: #2d2d2b;
+}
+
+.ingredients-list {
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: 0.6s;
+  opacity: 0;
+}
+
+.ingredients-hint {
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: 0.8s;
+  opacity: 0;
+  margin: 2rem 0;
+}
+
+.get-recipe-container {
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+  background-color: #f0efeb;
+  padding: 28px 42px;
+  border-radius: 8px;
+  margin-top: 48px;
+  margin-bottom: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.recipe-button {
+  font-family: 'Inter', sans-serif;
+  border-radius: 6px;
+  padding: 12px 35.5px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.recipe-button:hover {
+  background-color: #2d2d2b;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ingredient-item {
+  animation: fadeInUp 0.4s ease-out forwards;
+  animation-fill-mode: both;
+  padding: 8px 16px;
+  margin: 8px 0;
+  background-color: var(--secondary-color);
+  border-radius: 6px;
+  opacity: 0;
+}
+
+.spinner-container {
+  animation: fadeInUp 0.3s ease-out forwards;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.skeleton-wrapper {
+  animation: fadeInUp 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+.recipe-content {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+@media (max-width: 630px) {
+  .get-recipe-container p {
+    display: none;
+  }
+  .get-recipe-container h3 {
+    padding-bottom: 5px !important;
+  }
+  .get-recipe-container #get-recipe-btn {
+    padding: 9px 25px;
+  }
+}

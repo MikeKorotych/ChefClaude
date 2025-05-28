@@ -1,0 +1,75 @@
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sommelier-h2 {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.sommelier-form {
+  animation: fadeInUp 0.6s ease-out forwards;
+  animation-delay: 0.3s;
+  opacity: 0;
+}
+
+.markdown-content {
+  animation: fadeInUp 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.skeleton-wrapper {
+  animation: fadeInUp 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+/* Анимация для спиннера */
+.spinner-container {
+  animation: fadeInUp 0.3s ease-out forwards;
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+/* Стилизация формы */
+.sommelier-form {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding-bottom: 48px;
+}
+
+.sommelier-form input {
+  border-radius: 6px;
+  padding: 9px 13px;
+  border: 1px solid #d1d5db;
+  font-size: 14px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+  flex-grow: 1;
+  min-width: 150px;
+  max-width: 610px;
+  background-color: var(--secondary-color);
+}
+
+.sommelier-form button {
+  font-family: 'Inter', sans-serif;
+  border-radius: 6px;
+  padding: 9px 35.5px;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.sommelier-form button:hover {
+  background-color: #2d2d2b;
+}
