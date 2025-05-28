@@ -1,67 +1,58 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import ChefRecipe from './ChefRecipe';
 import ChefIngredientsList from './ChefIngredientsList';
 import { getRecipeFromChefClaude } from '../ai';
 import Spinner from '../assets/loading-spin.svg';
-import '../Styles/ChefMain.css';
-
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
+import '../Styles/ChefMain.css';
 
 const ChefMain = () => {
   const [ingredients, setIngredients] = useState([]);
   const [recipe, setRecipe] = useState('');
-  const [isLoading, setIsLoading] = useState(false); // Добавлено состояние для спиннера
+  const [isLoading, setIsLoading] = useState(false);
 
-  // Добавляем эффект для скролла к рецепту
+  // Скролл к рецепту после анимации
+  const scrollToRecipe = () => {
+    setTimeout(() => {
+      document.querySelector('.recipe-content')?.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }, 600); // Задержка равна времени анимации появления
+  };
+
+  // Эффект для скролла при изменении рецепта
   useEffect(() => {
     if (recipe) {
-      setTimeout(() => {
-        document.querySelector('.recipe-content')?.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        });
-      }, 600); // Задержка равна времени анимации появления
+      scrollToRecipe();
     }
   }, [recipe]);
 
   // Get recipe button
   const getRecipeHandler = async () => {
-    setIsLoading(true); // Показать спиннер
+    setIsLoading(true);
     try {
       const recipeMarkdown = await getRecipeFromChefClaude(ingredients);
       setRecipe(recipeMarkdown);
-
-      // Добавляем плавный скролл к рецепту после его появления
-      setTimeout(() => {
-        document.querySelector('.recipe-content')?.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        });
-      }, 600); // Задержка равна времени анимации появления
-      // Добавляем плавный скролл к рецепту после его появления
-      setTimeout(() => {
-        document.querySelector('.recipe-content')?.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        });
-      }, 600); // Задержка равна времени анимации появления
     } catch (error) {
       console.error('Error getting recipe:', error.message);
     } finally {
       setIsLoading(false); // Скрыть спиннер
     }
   };
-
   // Add ingredient
   const submitHandler = (formData) => {
-    const newIngredient = formData.get('ingredient');
+    const newIngredient = formData.get('ingredient')?.trim();
 
-    if (newIngredient.length > 0) {
-      setIngredients((ingredients) => [...ingredients, newIngredient]);
-    } else {
-      alert("Igredient can't be an empty string");
+    if (!newIngredient) {
+      alert("Ingredient can't be an empty string");
+      return;
     }
+
+    setIngredients((prev) => [...prev, newIngredient]);
+    // Очищаем форму после добавления
+    formData.target?.reset();
   };
   return (
     <main>
@@ -92,7 +83,7 @@ const ChefMain = () => {
         </>
       )}
       {recipe && (
-        <div className="recipe-content">
+        <div className="recipe-content" role="article">
           <ChefRecipe recipe={recipe} />
         </div>
       )}
