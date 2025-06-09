@@ -2,6 +2,10 @@ import Anthropic from '@anthropic-ai/sdk';
 
 const API_KEY = import.meta.env.VITE_ANTHROPIC_API_KEY;
 
+if (!API_KEY) {
+  throw new Error('API key not found in environment variables');
+}
+
 const SYSTEM_INSTRUCTIONS = `Always give an answer in the same language in which the user data is received. Always use emoji to style your answer.`;
 
 const SYSTEM_PROMPT_FOR_CHEF = `
