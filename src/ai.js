@@ -1,6 +1,6 @@
 import Anthropic from '@anthropic-ai/sdk';
 
-const API_KEY = import.meta.env.VITE_ANTHROPIC_API_KEY;
+// const API_KEY = import.meta.env.VITE_ANTHROPIC_API_KEY;
 
 // if (!API_KEY) {
 //   throw new Error('API key not found in environment variables');
@@ -65,7 +65,7 @@ For each day of the week, create (but no more than count of "Meals per Day" user
 `;
 
 const anthropic = new Anthropic({
-  apiKey: API_KEY,
+  apiKey: import.meta.env.VITE_ANTHROPIC_API_KEY,
   dangerouslyAllowBrowser: true,
 });
 
