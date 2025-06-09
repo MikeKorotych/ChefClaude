@@ -43,7 +43,30 @@ header {
     0px 1px 2px 0px rgba(0, 0, 0, 0.06);
 }
 
-ol,
+@media (max-width: 768px) {
+  header {
+    gap: 1rem;
+  }
+  .nav-wrapper a {
+    flex-direction: column;
+    gap: 0.5rem;
+    line-height: 1;
+  }
+
+  button {
+    padding: 9px 24px !important;
+    white-space: nowrap;
+  }
+
+  .add-ingredient-form #ingredient-input {
+    max-width: 66%;
+  }
+}
+
+ol {
+  list-style: number;
+}
+
 ul {
   list-style: circle;
 }
@@ -238,12 +261,18 @@ section p {
   color: #475467;
 }
 
-#suggested-recipe-container h3 {
-  margin-bottom: 24px;
+h3 {
+  margin: 24px;
+  text-align: center;
+}
+
+.markdown-content h2 {
+  text-align: center;
 }
 
 ul,
 ol {
+  padding-left: 0px !important;
   margin-top: 18px;
   margin-bottom: 40px;
 }
@@ -252,20 +281,42 @@ ol {
   display: none;
 }
 
-/* #suggested-recipe-container p:nth-of-type(2) {
-   display: none;
-} */
+.menu-planner__list-item1,
+.menu-planner__list-item2,
+.menu-planner__list-item3 {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
 
-#suggested-recipe-container p:first-of-type,
-#suggested-recipe-container p:last-of-type {
+/* удаляем ненужнгое начало */
+#suggested-recipe-container p:nth-of-type(2) {
+  display: none;
+}
+
+p:first-of-type,
+p:last-of-type {
   font-size: 1.1rem;
 }
 
-#suggested-recipe-container h3 {
-  font-size: 24px;
+strong {
+  display: inline-block;
+  /* scale: 1.2; */
+  /* margin-left: 16px; */
+}
+
+h3 {
+  font-size: 22px;
   line-height: 24px;
   font-weight: 600;
   padding: 8px;
+}
+
+.chef-main-h2 {
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 600;
+  padding-bottom: 12px;
 }
 
 button:active {
@@ -298,3 +349,74 @@ button:active {
 .get-recipe-container:hover {
    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.1);
 } */
+
+/* Claude styles */
+
+.markdown-content {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Заголовки */
+.markdown-content h1 {
+  font-size: 2rem;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.markdown-content h2 {
+  font-size: 1.5rem;
+  color: #2a2a2a;
+  margin: 1.5rem 0 1rem;
+}
+
+/* Списки */
+.markdown-content ul,
+.markdown-content ol {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+.markdown-content li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+}
+
+/* Разделители секций */
+.markdown-content hr {
+  margin: 2rem 0;
+  border: 0;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Интерактивные секции */
+.markdown-content details {
+  margin: 1rem 0;
+  padding: 0.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 4px;
+}
+
+.markdown-content summary {
+  cursor: pointer;
+  padding: 0.5rem;
+  font-weight: 500;
+}
+
+.markdown-content details[open] {
+  padding-bottom: 1rem;
+}
+
+/* Подсветка важных секций */
+.markdown-content blockquote {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-left: 4px solid #3b82f6;
+  background: #f3f4f6;
+}

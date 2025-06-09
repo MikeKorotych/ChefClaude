@@ -96,29 +96,18 @@
 }
 
 ul {
-  list-style: none;
   padding: 0;
 }
 
 .ingredient-item {
   animation: fadeInUp 0.4s ease-out forwards;
   animation-fill-mode: both;
-  padding: 0px 16px;
   margin: 8px 0;
   border-radius: 6px;
   opacity: 0;
   position: relative;
-  padding-left: 28px;
   line-height: 1.5;
-}
-
-.ingredient-item::before {
-  content: '•';
-  position: absolute;
-  left: 6px;
-  color: var(--primary-color);
-  font-size: 1.2em;
-  line-height: 1.5;
+  margin-left: 24px;
 }
 
 .spinner-container {

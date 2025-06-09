@@ -15,7 +15,7 @@ const ChefMain = () => {
   // Скролл к рецепту после анимации
   const scrollToRecipe = () => {
     setTimeout(() => {
-      document.querySelector('.recipe-content')?.scrollIntoView({
+      document.querySelector('.markdown-content')?.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
       });
@@ -57,7 +57,7 @@ const ChefMain = () => {
   return (
     <main>
       <h2 className="chef-main-h2">
-        Here you can create a meal from your products:
+        Here you can create a meal from your ingredients:
       </h2>
       <form className="add-ingredient-form" action={submitHandler}>
         <input
@@ -65,8 +65,9 @@ const ChefMain = () => {
           placeholder="e.g. oregano"
           aria-label="Add ingredient"
           name="ingredient"
+          id="ingredient-input"
         />
-        <button>+ Add ingredient</button>
+        <button id="add-ingredient_btn">+ Add</button>
       </form>
       <ChefIngredientsList
         ingredients={ingredients}
@@ -83,7 +84,7 @@ const ChefMain = () => {
         </>
       )}
       {recipe && (
-        <div className="recipe-content" role="article">
+        <div className="markdown-content" role="article">
           <ChefRecipe recipe={recipe} />
         </div>
       )}

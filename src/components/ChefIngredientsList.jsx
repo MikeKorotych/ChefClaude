@@ -28,7 +28,7 @@ const ChefIngredientsList = ({ ingredients, getRecipeHandler }) => {
       {ingredients.length > 3 && (
         <div className="get-recipe-container">
           <div>
-            <h3 className="chef-main-h2">Ready for a recipe?</h3>
+            <h2 className="chef-main-h2">Ready for a recipe?</h2>
             <p>Generate a recipe from your list of ingredients.</p>
           </div>
           <button

@@ -61,21 +61,6 @@
   background-color: #2d2d2b;
 }
 
-li,
-.title {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.title {
-  /* text-align: center; */
-  margin: 2rem 0;
-  font-size: 1.2rem;
-  line-height: 1.8;
-  flex-direction: column;
-}
-
 .title > div {
   display: flex;
   align-items: center;
