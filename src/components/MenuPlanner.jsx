@@ -95,7 +95,7 @@ const MenuPlanner = () => {
           </li>
         </ul>
         <h2 className="menu-planner-title">
-          Fill the form get a personal meal plan only for you:
+          Fill the form to get a personal meal plan only for you:
         </h2>
       </div>
       {/* <div className="title menu-planner-title">

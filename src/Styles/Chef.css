@@ -213,6 +213,14 @@ li {
   color: #475467;
 }
 
+.ingredients-list h2 {
+  font-size: 24px;
+}
+
+.menu-planner-title {
+  font-size: 24px;
+}
+
 .get-recipe-container {
   background-color: #f0efeb;
   padding: 28px 42px;
@@ -225,9 +233,9 @@ li {
   align-items: end;
 }
 
-.get-recipe-container h3 {
-  font-size: 18px;
-  line-height: 24px;
+.get-recipe-container h2 {
+  font-size: 20px;
+  line-height: 20px;
   font-weight: 600;
   padding-bottom: 8px;
 }
@@ -313,8 +321,7 @@ h3 {
 }
 
 .chef-main-h2 {
-  font-size: 24px;
-  line-height: 24px;
+  font-size: 30px;
   font-weight: 600;
   padding-bottom: 12px;
 }
@@ -345,10 +352,6 @@ button:active {
   line-height: 1.7;
   font-size: 1.7rem;
 }
-/* 
-.get-recipe-container:hover {
-   box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.1);
-} */
 
 /* Claude styles */
 
