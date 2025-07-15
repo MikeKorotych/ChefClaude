@@ -1,14 +1,12 @@
 # MasterChef Claude
 
-This project is a web application built with React and Vite, designed to showcase recipes and culinary skills. 
-
 ## Features
 
 * **Chef Claude🍽️:** Generate a meal from your ingredients.  
 * **Menu Planner📃:** Create your meal plan depending on:
-- lifestyle
-- favorite products
-- dietary preferences.  
+🤸‍♂️ lifestyle
+🍖 favorite products
+🍴 dietary preferences.  
 * **AI Sommelier🍷:** Find what kind of drink goes best with your dish.  
 
 ## Technologies
